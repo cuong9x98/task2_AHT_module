@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <css src="mage/calendar.css"/>
+        <script src="requirejs/require.js"/>
+        <script src="mage/polyfill.js"/>
+    </head>
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="AHT\Task\Block\Product\View\Alert" name="alert.page"  template="AHT_Task::product/view/alert_page.phtml" ></block>
+        </referenceBlock>
+    </body>
+</page>
