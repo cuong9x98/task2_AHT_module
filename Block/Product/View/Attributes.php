@@ -79,9 +79,10 @@ class Attributes extends \Magento\Framework\View\Element\Template
      */
     public function getAdditionalData(array $excludeAttr = [])
     {
+        $dem =0;
         $data = [];
         $product = $this->getProduct();
-        $attributes = $product->getAttributes();
+        $attributes = $product->getAttributes();// check attribute shown frontend 
         foreach ($attributes as $attribute) {
             if ($this->isVisibleOnFrontend($attribute, $excludeAttr)) {
                 $value = $attribute->getFrontend()->getValue($product);
@@ -93,6 +94,7 @@ class Attributes extends \Magento\Framework\View\Element\Template
                 }
 
                 if (is_string($value) && strlen(trim($value))) {
+                    $dem++;
                     $data[$attribute->getAttributeCode()] = [
                         'label' => $attribute->getStoreLabel(),
                         'value' => $value,

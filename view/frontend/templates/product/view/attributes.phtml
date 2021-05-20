@@ -15,7 +15,6 @@
 <?php
     $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
     $_product = $block->getProduct();
-    $count = $block->getNumberAttribute();
 ?>
 <?php if ($_additional = $block->getAdditionalData()) :?>
     <div class="additional-attributes-wrapper table-wrapper">
@@ -28,10 +27,6 @@
                     <td class="col data" data-th="<?= $block->escapeHtmlAttr($_data['label']) ?>"><?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
                 </tr>
             <?php endforeach; ?>
-                <tr>
-                    <th class="col label" scope="row">Number of shown Attributes</th>
-                    <td class="col data" data-th="<?= $block->escapeHtmlAttr($_data['label']) ?>"><?php echo $count; ?></td>                
-                </tr>
             </tbody>
         </table>
     </div>
